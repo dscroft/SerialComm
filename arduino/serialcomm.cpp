@@ -140,6 +140,8 @@ bool SerialComm::_waitAck( byte id ) {
                 }
             }
         }
+	    
+	yield(); // needed on devices like the ESP8266 to prevent WDT
     }
 	return false;
 }
